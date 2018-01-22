@@ -45,7 +45,7 @@ contract DividendManager is Ownable {
             if (token.balanceOf(addr) < 1000E6) {
                 uint256 dividends_before_commision = dividend_per_token.mul(token.balanceOf(addr));    
                 uint256 dividends_after_commision = dividends_before_commision.mul(85).div(100);
-            } else if (token.balanceOf(addr) > 1000E6) {
+            } else if (token.balanceOf(addr) >= 1000E6) {
                 dividends_before_commision = dividend_per_token.mul(token.balanceOf(addr));
                 dividends_after_commision = dividends_before_commision.mul(925).div(1000);
             }
